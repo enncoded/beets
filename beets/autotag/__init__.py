@@ -220,21 +220,21 @@ def apply_metadata(album_info: AlbumInfo, mapping: Mapping[Item, TrackInfo]):
             item.albumartists = album_info.artists
 
         # Album.
-        item.album = album_info.album
+        # item.album = album_info.album
 
         # Artist sort and credit names.
         item.artist_sort = track_info.artist_sort or album_info.artist_sort
         item.artists_sort = track_info.artists_sort or album_info.artists_sort
-        item.artist_credit = (
-            track_info.artist_credit or album_info.artist_credit
-        )
-        item.artists_credit = (
-            track_info.artists_credit or album_info.artists_credit
-        )
+        # item.artist_credit = (
+        #     track_info.artist_credit or album_info.artist_credit
+        # )
+        # item.artists_credit = (
+        #     track_info.artists_credit or album_info.artists_credit
+        # )
         item.albumartist_sort = album_info.artist_sort
         item.albumartists_sort = album_info.artists_sort
-        item.albumartist_credit = album_info.artist_credit
-        item.albumartists_credit = album_info.artists_credit
+        # item.albumartist_credit = album_info.artist_credit
+        # item.albumartists_credit = album_info.artists_credit
 
         # Release date.
         for prefix in "", "original_":
@@ -260,7 +260,7 @@ def apply_metadata(album_info: AlbumInfo, mapping: Mapping[Item, TrackInfo]):
                     item[suffix] = value
 
         # Title.
-        item.title = track_info.title
+        # item.title = track_info.title
 
         if config["per_disc_numbering"]:
             # We want to let the track number be zero, but if the medium index
